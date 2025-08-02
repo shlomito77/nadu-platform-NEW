@@ -1,1 +1,18 @@
-{}
+{
+  "name": "nadu-platform",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "cd client && vite",
+    "dev:server": "cd server && ts-node src/index.ts",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && vite build",
+    "build:server": "cd server && esbuild src/index.ts --bundle --outdir=dist"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "esbuild": "^0.15.0",
+    "ts-node": "^10.0.0"
+  }
+}
